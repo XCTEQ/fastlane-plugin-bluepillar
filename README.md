@@ -57,7 +57,7 @@ Run XCUITests in Parallel using Bluepill. [Bluepill](https://github.com/linkedin
 
 ## Example
 
-There is sample example project available on Github [Bluepillar-Demo](https://github.com/Shashikant86/Bluepillar-Demo). Just clone it run
+There is sample example project available on Github [Bluepillar-Demo](https://github.com/Shashikant86/Bluepillar-Demo). Just clone it, replace the path to derived data and run
 
            $ git clone git@github.com:Shashikant86/Bluepillar-Demo.git
            $ bundle install
