@@ -6,21 +6,53 @@
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-bluepillar`, add it to your project by running:
 
+
+
 ```bash
 fastlane add_plugin bluepillar
 ```
+Now, we have to manually d
+
+
+### Pre-requisite
+
+[Bluepill](https://github.com/linkedin/bluepill) homebrew package doesn't work well as it's lacking `bp` binary, so we have to manually download `bluepill` and `bp` binaries somewhere in your app. This is limitation till homebrew install works properly.  
+
+Then in your `Fastfile` set some bluepill options. Your example lane will look like this
+
+```
+
+lane :test do
+  bluepillar(
+    app_path: "/Users/shashi/Library/Developer/Xcode/DerivedData/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/Bluepillar.app",
+    runner_app_path: "/Users/shashi/Library/Developer/Xcode/DerivedData/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app",
+    xctest_scheme_path: "Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme",
+    bluepill_binary_path: "bin/bluepill",
+    bluepill_report_path: "bluepill_output/",
+    simulators: "3",
+    bluepill_ios_version: '"iOS 10.3"'
+  )
+end
+
+```
+
 
 ## About bluepillar
 
-Run XCUITests in Parallel using Bluepill
+Run XCUITests in Parallel using Bluepill. [Bluepill](https://github.com/linkedin/bluepill) is a tool from LinkedIn to run XCUI tests in the parallel.
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
 
 ## Example
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+There is sample example project available on Github [Bluepillar-Demo](https://github.com/Shashikant86/Bluepillar-Demo). Just clone it run
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+           $ git clone git@github.com:Shashikant86/Bluepillar-Demo.git
+           $ bundle install
+           $ bundle exec fastlane test
+
+You can see sample report in the  `sample_bluepill_output` directory.
+
+
 
 ## Run tests for this plugin
 
@@ -46,7 +78,3 @@ If you have trouble using plugins, check out the [Plugins Troubleshooting](https
 ## Using _fastlane_ Plugins
 
 For more information about how the `fastlane` plugin system works, check out the [Plugins documentation](https://docs.fastlane.tools/plugins/create-plugin/).
-
-## About _fastlane_
-
-_fastlane_ is the easiest way to automate beta deployments and releases for your iOS and Android apps. To learn more, check out [fastlane.tools](https://fastlane.tools).
