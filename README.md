@@ -11,7 +11,7 @@ This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To 
 ```bash
 fastlane add_plugin bluepillar
 ```
-Now, we have to manually d
+
 
 
 ### Pre-requisite
@@ -29,7 +29,7 @@ scan(
     buildlog_path: "./bluepill/logs/"
   )
 ```
-This will geberate derived data inside `bluepill` directory. 
+This will generate derived data inside `bluepill` directory. 
 
 
 
