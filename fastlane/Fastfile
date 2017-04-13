@@ -1,0 +1,11 @@
+lane :test do
+  bluepillar(
+    app_path: "/Users/shashi/Library/Developer/Xcode/DerivedData/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/Bluepillar.app",
+    runner_app_path: "/Users/shashi/Library/Developer/Xcode/DerivedData/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app",
+    xctest_scheme_path: "Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme",
+    bluepill_binary_path: "bin/bluepill",
+    bluepill_report_path: "bluepill_output/",
+    simulators: "3",
+    bluepill_ios_version: '"iOS 10.3"'
+  )
+end
