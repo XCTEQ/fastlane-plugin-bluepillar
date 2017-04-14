@@ -2,6 +2,8 @@
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-bluepillar)
 
+<a href="https://travis-ci.org/Shashikant86/fastlane-plugin-bluepillar/"><img src="https://img.shields.io/travis/Shashikant86/fastlane-plugin-bluepillar.svg" /></a>
+
 ## Getting Started
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin to run XCUI Tests in parallel using Linkedin's Bluepill tool. To get started with `fastlane-plugin-bluepillar`, add it to your project by running:
@@ -61,16 +63,13 @@ Now that, all the Bluepill options are in place and we have generated derived da
 ```
 
 lane :test do
-  bluepillar(
-    app: "bluepill/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/Bluepillar.app",
-    runner_app_path: "bluepill/Bluepillar-ekhnxpeagzjvbabmoghlgxagbgna/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app",
-    scheme_path: "Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme",
-
-    output_dir: "bluepill_output/",
-    num_sims: "3",
+    app: 'bluepill/Build/Products/Debug-iphonesimulator/Bluepillar.app',
+    runner_app_path: 'bluepill/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app',
+    scheme_path: 'Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme',
+    output_dir: 'bluepill_output/',
+    num_sims: '3',
     runtime: '"iOS 10.3"',
-    device: 'iPad\ Air'
-  )
+    device: 'iPad Air'
 end
 
 ```
