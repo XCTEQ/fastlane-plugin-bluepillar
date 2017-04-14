@@ -1,11 +1,11 @@
 lane :test do
   bluepillar(
-  app: 'bluepill/Build/Products/Debug-iphonesimulator/Bluepillar.app',
-  runner_app_path: 'bluepill/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app',
-  scheme_path: 'Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme',
-  output_dir: 'bluepill_output/',
-  num_sims: '3',
-  runtime: '"iOS 10.3"',
-  device: 'iPad Air'
-)
+      app:   'bluepill/Build/Products/Debug-iphonesimulator/Bluepillar.app',
+      runner_app_path: 'bluepill/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app',
+      scheme_path: 'Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme',
+      output_dir: 'bluepill_output/',
+      num_sims: '3',
+      runtime: '"iOS 10.3"',
+      device: 'iPad Air'
+  )
 end

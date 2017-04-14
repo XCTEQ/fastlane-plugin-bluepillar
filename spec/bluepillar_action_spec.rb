@@ -1,9 +1,8 @@
 describe Fastlane::Actions::BluepillarAction do
   describe '#run' do
-    it 'prints a message' do
-      expect(Fastlane::UI).to receive(:message).with("Starting XCTests using the bluepillar fastlane plugin!")
-
-      Fastlane::Actions::BluepillarAction.run(nil)
+    it 'prints correct description' do
+      plugin_description = Fastlane::Actions::BluepillarAction.description
+      expect(plugin_description).to include("Run XCUITests in Parallel using Bluepill")
     end
   end
 end
