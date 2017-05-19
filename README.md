@@ -18,7 +18,7 @@ fastlane add_plugin bluepillar
 ### Pre-requisite
 
 [Bluepill](https://github.com/linkedin/bluepill) homebrew package doesn't work well as it's lacking `bp` binary.
-We have to manually download `bluepill` and `bp` binaries from the Bluepill releases page on [Github](https://github.com/linkedin/bluepill/releases) and put in PATH. This plugin expect it inside `/usr/local/bin/` where all the other binaries live, so that we have `/usr/local/bin/bluepill` and `/usr/local/bin/bp` binaries in place.
+We have to manually download `bluepill` and `bp` binaries from the Bluepill releases page on [GitHub](https://github.com/linkedin/bluepill/releases) and put in PATH. This plugin expect it inside `/usr/local/bin/` where all the other binaries live, so that we have `/usr/local/bin/bluepill` and `/usr/local/bin/bp` binaries in place.
 
 ### Fastlane Setup
 
@@ -86,7 +86,7 @@ Run XCUITests in Parallel using Bluepill. [Bluepill](https://github.com/linkedin
 
 ## Example
 
-There is sample example project available on Github [Bluepillar-Demo](https://github.com/Shashikant86/Bluepillar-Demo). Just clone it, replace the path to derived data and run
+There is sample example project available on GitHub [Bluepillar-Demo](https://github.com/Shashikant86/Bluepillar-Demo). Just clone it, replace the path to derived data and run
 
 
              $ git clone git@github.com:Shashikant86/Bluepillar-Demo.git
