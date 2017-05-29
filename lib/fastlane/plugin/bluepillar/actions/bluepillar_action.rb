@@ -27,8 +27,6 @@ module Fastlane
           'bluepill',
           '-a',
           bluepill_app_path,
-          '-u',
-          bluepill_runner_app_path,
           '-s',
           bluepill_scheme_path,
           '-o',
@@ -40,6 +38,9 @@ module Fastlane
           '-d',
           processed_device,
         ]
+
+        command.concat ['-u', bluepill_runner_app_path] if bluepill_runner_app_path
+
         Actions.sh(command.join(' '))
       end
 
@@ -71,7 +72,7 @@ module Fastlane
                                       env_name: "BLUEPILLAR_RUNNER_APP_PATH",
                                       description: "Path to the test runner app in the Derived Data",
                                       is_string: true,
-                                      optional: false),
+                                      optional: true),
 
            FastlaneCore::ConfigItem.new(key: :scheme_path,
                                      env_name: "BLUEPILLAR_XCTEST_SCHEME_PATH",
