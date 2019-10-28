@@ -15,7 +15,6 @@ module Fastlane
 
         bluepill_app_path = params[:app]
         bluepill_runner_app_path = params[:runner_app_path]
-        bluepill_scheme_path = params[:scheme_path]
         bluepill_num_sims = params[:num_sims]
         bluepill_output_dir = params[:output_dir]
         bluepill_runtime = params[:runtime]
@@ -27,8 +26,6 @@ module Fastlane
           'bluepill',
           '-a',
           bluepill_app_path,
-          '-s',
-          bluepill_scheme_path,
           '-o',
           bluepill_output_dir,
           '-r',
@@ -74,12 +71,6 @@ module Fastlane
                                       is_string: true,
                                       optional: true),
 
-           FastlaneCore::ConfigItem.new(key: :scheme_path,
-                                     env_name: "BLUEPILLAR_XCTEST_SCHEME_PATH",
-                                     description: "Path to the scheme to be build for the bluepill in the .xcodeproj",
-                                     is_string: true,
-                                     optional: false),
-
            FastlaneCore::ConfigItem.new(key: :output_dir,
                                     env_name: "BLUEPILLAR_REPORT_PATH",
                                     description: "Path to store simulator logs and test reports",
@@ -113,7 +104,6 @@ module Fastlane
            ['   bluepillar(
                     app: "bluepill/Build/Products/Debug-iphonesimulator/Bluepillar.app",
                     runner_app_path: "bluepill/Build/Products/Debug-iphonesimulator/BluepillarUITests-Runner.app",
-                    scheme_path: "Bluepillar.xcodeproj/xcshareddata/xcschemes/Bluepillar.xcscheme",
                     output_dir: "bluepill_output/",
                     num_sims: "3",
                     runtime: '"iOS 10.3"',
